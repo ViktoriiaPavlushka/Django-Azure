@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load custom_template %}
+
+{% block title %}ПолітехCinema - {{ model_name }} List{% endblock %}
+
+{% block content %}
+    <section class="list">
+        <h1>{{ model_name }} List</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    {% for field in field_names %}
+                        {% if field != "description" %}
+                            <th>{{ field }}</th>
+                        {% endif %}
+                    {% endfor %}
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    {% for field in field_names %}
+                        {% if field != "description" %}
+                            <td>{{ item|getatt:field }}</td>
+                        {% endif %}
+                    {% endfor %}
+                    <td>
+                        <a href="{% url 'detail' model_name item.pk %}">View Details</a>
+                        <a href="{% url 'create' model_name %}">Add</a>
+                        <a href="{% url 'delete' model_name item.pk %}">Delete</a>
+                        <a href="{% url 'update' model_name item.pk %}">Update</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+{% endblock %}

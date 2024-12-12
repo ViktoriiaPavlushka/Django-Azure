@@ -1,0 +1,37 @@
+{% extends 'baseUser.html' %}
+{% load custom_template %}
+
+{% block title %}ПолітехCinema - {{ model_name }} ListUser{% endblock %}
+
+{% block content %}
+    <section class="list">
+        <h1>{{ model_name }} List</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    {% for field in field_names %}
+                        {% if field != "description" %}
+                            <th>{{ field }}</th>
+                        {% endif %}
+                    {% endfor %}
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    {% for field in field_names %}
+                        {% if field != "description" %}
+                            <td>{{ item|getatt:field }}</td>
+                        {% endif %}
+                    {% endfor %}
+                    <td>
+                        <a href="{% url 'detailUser' model_name item.pk %}">View Details</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+{% endblock %}

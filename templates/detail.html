@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load custom_template %}
+
+{% block title %}ПолітехCinema - {{ model_name }} Details{% endblock %}
+
+{% block content %}
+    <section class="detail">
+        <h1>{{ model_name }} Details</h1>
+        
+        <h2>{{ item }}</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    {% for field in field_names %}
+                    <th>{{ field }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for field in field_names %}
+                    <td>{{ item|getatt:field }}</td>
+                    {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="{% url 'list' model_name%}" class="btn">Back to List</a>
+    </section>
+{% endblock %}

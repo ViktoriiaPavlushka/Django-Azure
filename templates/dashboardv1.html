@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Plotly{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        h1 {
+            color: #333;
+        }
+        .graph-container {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{% block header %}Plotly{% endblock %}</h1>
+    </header>
+
+    <main>
+        <div class="graph-container">
+            {% block graph %}
+            {{ graph|safe }}
+                {{ graph1|safe }}
+                {{ graph2|safe }}
+                {{ graph4|safe }}
+                {{ graph5|safe}}
+                {{ graph6|safe }}
+            {% endblock %}
+        </div>
+  
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Plotly Dashboard</p>
+    </footer>
+    <a href="{% url 'home' %}" class="back-button">Back to Home</a>
+</body>
+
+</html>
