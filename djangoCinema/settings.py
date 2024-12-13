@@ -51,7 +51,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
 ]
 
-CORS_ALLOWED_ORIGINS = ['http://localhost:3306']
+# CORS_ALLOWED_ORIGINS = ['http://localhost:3306']
 
 
 ROOT_URLCONF = "djangoCinema.urls"
@@ -79,16 +79,26 @@ WSGI_APPLICATION = "djangoCinema.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'DjangoCinema',
-        'USER' : 'root',
-        'PASSWORD' : 'vika.17122005',
-        'HOST': 'localhost',
-        'PORT': '3306'
+        'NAME': 'djangocinema-database',
+        'USER' : 'psvgmnughg',
+        'PASSWORD' : '$HXyhzE4xnfcPX25',
+        'HOST': 'djangocinema-server.mysql.database.azure.com',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'DjangoCinema',
+#         'USER' : 'root',
+#         'PASSWORD' : 'vika.17122005',
+#         'HOST': 'localhost',
+#         'PORT': '3306'
+#     }
+# }
 
 
 # Password validation

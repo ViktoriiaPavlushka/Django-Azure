@@ -36,11 +36,20 @@ CONNECTION_STR = {pair.split('=')[0]: pair.split('=')[1] for pair in CONNECTION.
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': CONNECTION_STR['Database'],
-        'HOST': CONNECTION_STR['Server'],
-        'USER' : CONNECTION_STR['User Id'],
-        'PASSWORD' : CONNECTION_STR['Password'],
+        'NAME': 'djangocinema-database',
+        'USER' : 'psvgmnughg',
+        'PASSWORD' : '$HXyhzE4xnfcPX25',
+        'HOST': 'djangocinema-server.mysql.database.azure.com',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': CONNECTION_STR['Database'],
+#         'HOST': CONNECTION_STR['Server'],
+#         'USER' : CONNECTION_STR['User Id'],
+#         'PASSWORD' : CONNECTION_STR['Password'],
+#     }
+# }
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
