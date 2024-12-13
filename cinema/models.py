@@ -114,6 +114,7 @@ class Ticket(models.Model):
     seatID = models.ForeignKey(Seat, on_delete=models.CASCADE)
     sessionID = models.ForeignKey(Session, on_delete=models.CASCADE)
     priceID = models.ForeignKey(Price, on_delete=models.CASCADE)
+    timestamp = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
         return f"Ticket for {self.userID.name} {self.userID.lastName}"

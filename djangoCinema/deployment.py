@@ -7,7 +7,7 @@ from .settings import *
 ALLOWED_HOSTS = [os.environ['ПолітехCinema_HOST']]
 CSRF_TRUSTED_ORIGINS = ['https://'+os.environ['ПолітехCinema_HOST']]
 DEBUG = False
-SECRET_KEY = os.environ['ПолітехCinema_SECRET_KEY']
+SECRET_KEY = os.environ['Cinema_SECRET_KEY']
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

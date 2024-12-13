@@ -86,10 +86,10 @@ class FilmStatisticsRepositoryTest(TestCase):
 
     def test_get_film_statistics(self):
         stats = FilmStatisticsRepository.get_film_statistics()
-        self.assertEqual(stats[0]['year'], 2021)  # Перший рік у списку
+        self.assertEqual(stats[0]['year'], 2021)
         self.assertEqual(stats[0]['film_count'], 1)
 
-        self.assertEqual(stats[1]['year'], 2020)  # Другий рік у списку
+        self.assertEqual(stats[1]['year'], 2020)
         self.assertEqual(stats[1]['film_count'], 1)
 
 
@@ -113,34 +113,23 @@ class SessionStatisticsRepositoryTest(TestCase):
 
 class UserIntegrationTest(TestCase):
     def setUp(self):
-        # Ініціалізація тестового клієнта
         self.client = Client()
-        self.register_url = reverse('register')  # Указати назву вашого маршруту для реєстрації
+        self.register_url = reverse('register')
 
     def test_user_registration_and_persistence(self):
-        # Дані для реєстрації користувача
         user_data = {
             'name': 'Alice',
             'lastName': 'Smith',
             'yearOfBirth': '1995-06-15',
             'phoneNumber': '0987654321',
-            'password1': 'testpassword123',  # Враховуйте назви полів для пароля у вашій формі
+            'password1': 'testpassword123',
             'password2': 'testpassword123',
         }
 
-        # Надсилаємо POST-запит на реєстрацію
         response = self.client.post(self.register_url, data=user_data)
-
-        # Перевіряємо редирект після успішної реєстрації
-        self.assertEqual(response.status_code, 302)  # Змінити код, якщо у вас інший
-
-        # Перевіряємо, чи користувач збережений у базі даних
+        self.assertEqual(response.status_code, 302)
         self.assertTrue(User.objects.filter(phoneNumber='0987654321').exists())
-
-        # Дістаємо користувача з бази даних
         user = User.objects.get(phoneNumber='0987654321')
-
-        # Перевіряємо, чи збережені правильні дані
         self.assertEqual(user.name, 'Alice')
         self.assertEqual(user.lastName, 'Smith')
         self.assertEqual(str(user.yearOfBirth), '1995-06-15')
