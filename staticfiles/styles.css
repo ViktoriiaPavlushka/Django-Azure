@@ -1,0 +1,497 @@
+/* styles.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: rgba(172, 108, 197, 0.78);
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(116, 57, 140, 0.78);
+    padding: 0.5rem;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 2rem;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(116, 57, 140, 0.78);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Form Section */
+.form-section {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.form-section h1 {
+    margin-bottom: 1.5rem;
+    color: rgba(87, 39, 107, 0.78);
+    text-align: center;
+}
+
+.ticket-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.ticket-form input,
+.ticket-form select,
+.ticket-form textarea {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ticket-form input:focus,
+.ticket-form select:focus,
+.ticket-form textarea:focus {
+    border-color: rgba(87, 39, 107, 0.78);
+    box-shadow: 0 0 5px rgba(116, 57, 140, 0.78);
+}
+
+.btn-submit {
+    background-color: rgba(219, 142, 238, 0.91);
+    color: #fff;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: rgba(219, 142, 238, 0.91);
+    transform: scale(1.05);
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: separate; /* Зміна для дозволу заокруглених кутів */
+    border-spacing: 0; /* Прибирає проміжки між осередками */
+    margin: 2rem 0;
+    border-radius: 10px; /* Загальні заокруглені кути таблиці */
+    overflow: hidden; /* Забезпечує правильний вигляд заокруглених кутів */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Легка тінь */
+}
+
+table th, table td {
+    padding: 1rem;
+    text-align: left;
+}
+
+table th {
+    background-color: rgba(172, 108, 197, 0.78); /* Яскравий фон заголовків */
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+table td {
+    background-color: #fff; /* Світлий фон для основних клітинок */
+    color: #333;
+    border-top: 1px solid #ddd; /* Тонка межа між рядками */
+}
+
+table tr:first-child th:first-child {
+    border-top-left-radius: 10px; /* Верхній лівий кут таблиці */
+}
+
+table tr:first-child th:last-child {
+    border-top-right-radius: 10px; /* Верхній правий кут таблиці */
+}
+
+table tr:last-child td:first-child {
+    border-bottom-left-radius: 10px; /* Нижній лівий кут таблиці */
+}
+
+table tr:last-child td:last-child {
+    border-bottom-right-radius: 10px; /* Нижній правий кут таблиці */
+}
+
+table tr:nth-child(even) td {
+    background-color: #f9f7fc; /* Легка зміна кольору для парних рядків */
+}
+
+table tr:hover td {
+    background-color: #f1ecf8; /* Підсвічування рядка при наведенні */
+    transition: background-color 0.3s ease; /* Плавний перехід */
+}
+
+
+/* Загальні стилі для всіх кнопок */
+button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: #74398c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    background-color: #5e2d70;
+    transform: scale(1.05); /* Збільшення кнопки при наведенні */
+    box-shadow: 0 4px 10px rgba(94, 45, 112, 0.5); /* Додати тінь при наведенні */
+}
+
+button:active {
+    transform: scale(0.95); /* Стиснення кнопки при натисканні */
+    background-color: rgba(116, 57, 140, 0.78); /* Темніший відтінок при натисканні */
+    box-shadow: none; /* Зникає тінь під час натискання */
+}
+
+/* Якщо потрібно змінити стиль для окремих типів кнопок, додаємо класи */
+.hero button {
+    font-size: 0.5rem; /* Трохи більший текст для кнопок у .hero */
+}
+
+.btn-submit {
+    font-size: 0.5rem; /* Стандартний розмір тексту */
+}
+
+
+/* Стилі для посилань, стилізованих під кнопки */
+a.button, button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #74398c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Прибрати підкреслення */
+    display: inline-block; /* Для коректного відображення */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.button:hover, button:hover {
+    background-color: #5e2d70;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(94, 45, 112, 0.5);
+}
+
+a.button:active, button:active {
+    transform: scale(0.95);
+    background-color: #441b4d;
+    box-shadow: none;
+}
+
+/* Home Page Styles */
+.home-main {
+    padding: 2rem;
+    text-align: center;
+    color: #333;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #74398c;
+    color: #fff;
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    color: #74398c;
+    margin-bottom: 1rem;
+}
+
+.feature p {
+    font-size: 1rem;
+    color: #555;
+}
+
+
+
+/* Стилі для навігаційних посилань */
+nav a {
+    color: #fff; /* Білий текст */
+    margin: 0 1rem; /* Відстань між посиланнями */
+    text-decoration: none; /* Прибрати підкреслення */
+    padding: 0.5rem 1rem; /* Додати трохи простору навколо тексту */
+    border-radius: 5px; /* Заокруглення куточків для приємного ефекту */
+    transition: background-color 0.3s ease; /* Плавний перехід фону */
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Світлий фон при наведенні */
+}
+
+nav a:active {
+    background-color: rgba(255, 255, 255, 0.4); /* Більш насичений фон при натисканні */
+}
+
+
+/* Login Section */
+.login-section {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center form */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh; /* Set minimum height to prevent small screens from feeling cramped */
+}
+
+.login-section h1 {
+    text-align: center;
+    color: rgba(87, 39, 107, 0.88);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.login-form input {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+.login-form input:focus {
+    border-color: rgba(87, 39, 107, 0.78);
+    box-shadow: 0 0 5px rgba(116, 57, 140, 0.78);
+}
+
+.login-form .btn-login {
+    background-color: rgba(219, 142, 238, 0.91);
+    color: #fff;
+    padding: 0.75rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+}
+
+.login-form .btn-login:hover {
+    background-color: rgba(172, 108, 197, 0.78);
+    transform: scale(1.05);
+}
+
+.login-form .btn-login:active {
+    transform: scale(0.95);
+    background-color: rgba(116, 57, 140, 0.78);
+    box-shadow: none;
+}
+
+.login-section p {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 1rem;
+}
+
+.login-section p a {
+    color: rgba(116, 57, 140, 0.78);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-section p a:hover {
+    text-decoration: underline;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 600px) {
+    .login-section {
+        padding: 1.5rem;
+    }
+
+    .login-section h1 {
+        font-size: 1.8rem; /* Adjust header size for smaller screens */
+    }
+
+    .login-form {
+        gap: 1.2rem; /* Reduce gap between inputs on smaller screens */
+    }
+
+    .login-form input {
+        font-size: 0.9rem; /* Slightly smaller font size */
+    }
+
+    .login-form .btn-login {
+        font-size: 1rem; /* Adjust button size for smaller screens */
+    }
+}
+
+
+
+#registration
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transform: translate(-50%, -50%); /* Center form */
+}
+
+.registration-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(138, 85, 161, 0.78);
+    max-width: 500px;
+    width: 200%;
+    transform: translate(+77%); /* Center form */
+}
+
+.registration-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: rgba(60, 21, 77, 0.78);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group input:focus {
+    border-color: rgba(172, 108, 197, 0.78);
+    outline: none;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(172, 108, 197, 0.78);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: rgba(172, 108, 197, 0.78);
+}
+
+
+
