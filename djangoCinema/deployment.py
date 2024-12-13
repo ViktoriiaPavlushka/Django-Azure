@@ -4,8 +4,8 @@ from django.middleware.csrf import CSRF_ALLOWED_CHARS
 from .settings import BASE_DIR
 from .settings import *
 
-ALLOWED_HOSTS = [os.environ['ПолітехCinema_HOST']]
-CSRF_TRUSTED_ORIGINS = ['https://'+os.environ['ПолітехCinema_HOST']]
+ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']]
+CSRF_TRUSTED_ORIGINS = ['https://'+os.environ['WEBSITE_HOSTNAME']]
 DEBUG = False
 SECRET_KEY = os.environ['Cinema_SECRET_KEY']
 
@@ -29,18 +29,18 @@ STORAGES = {
     },
 }
 
-CONNECTION = os.environ['AZURE_ПолітехCinema_DB']
+CONNECTION = os.environ['AZURE_MYSQL_CONNECTIONSTRING']
 CONNECTION_STR = {pair.split('=')[0]: pair.split('=')[1] for pair in CONNECTION.split(' ')}
 
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': CONNECTION_STR['DjangoCinema'],
-        'HOST': CONNECTION_STR['host'],
-        'USER' : CONNECTION_STR['root'],
-        'PASSWORD' : CONNECTION_STR['vika.17122005'],
+        'NAME': CONNECTION_STR['Database'],
+        'HOST': CONNECTION_STR['Server'],
+        'USER' : CONNECTION_STR['User Id'],
+        'PASSWORD' : CONNECTION_STR['Password'],
     }
 }
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
