@@ -122,6 +122,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://djangocinema-h3hca6a5f7a7hgfa.polandcentral-01.azurewebsites.net",
+    "https://djangocinema-h3hca6a5f7a7hgfa.polandcentral-01",
+]
+CORS_TRUSTED_ORIGINS = [
+    "https://djangocinema-h3hca6a5f7a7hgfa.polandcentral-01.azurewebsites.net",
+    "https://djangocinema-h3hca6a5f7a7hgfa.polandcentral-01",
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
